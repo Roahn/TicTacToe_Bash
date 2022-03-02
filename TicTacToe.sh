@@ -2,7 +2,7 @@
 arr=('11' '12' '13' '14' '15' '16' '17' '18' '19' '20' '21') 
 
 
-echo "${arr[@]}"
+#echo "${arr[@]}"
 
 player1=$1
 player2=$2
@@ -43,7 +43,7 @@ echo "| ${arr[1]}  | ${arr[2]}  | ${arr[3]}  |"
 echo "|-----|-----|-----|"
 }
 
-printmatrix 
+#printmatrix 
 
 while [ $n -ne 9  ]
 do
@@ -142,8 +142,20 @@ do
 
             ;; 
         * )
-            echo "Enter correct input How much is worth of your brain"
-            echo "Enter correct or leave the match " ;; 
+            echo "Enter correct input "
+            echo "Enter correct or leave the match "
+            if [$id -eq   100 ]
+            then
+                id=$(($id-1))
+                value=66
+                
+            else
+                
+                id=$(($id+1))
+                value=99
+                
+
+            fi
         
   
     
@@ -234,8 +246,35 @@ do
             
         fi
     fi
+    if  [ ${arr[1]} -eq ${arr[5]} ] && [ ${arr[5]} -eq  ${arr[9]} ]
+    
+        then
+            if [ $value -eq 66 ]
+            then 
+                echo "$player1 1 Won the Match"
+                break
+                
+            else
+                echo "$player2 1 Won the Match"
+                break
+                
+            fi
+        fi
 
-
+     if  [ ${arr[7]} -eq ${arr[5]} ] && [ ${arr[5]} -eq  ${arr[3]} ]
+    
+        then
+            if [ $value -eq 66 ]
+            then 
+                echo "$player1 1 Won the Match"
+                break
+                
+            else
+                echo "$player2 1 Won the Match"
+                break
+                
+            fi
+        fi
 
 
 
